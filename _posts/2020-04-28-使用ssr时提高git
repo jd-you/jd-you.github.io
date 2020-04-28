@@ -1,0 +1,20 @@
+---
+layout:     post   				    # 使用的布局（不需要改）
+title:      SSR下提高git速度的方法				# 标题 
+subtitle:    #副标题
+date:       2020-04-28 				# 时间
+author:     Jiadi You 						# 作者
+header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
+catalog: true 						# 是否归档
+tags:								#标签
+    - 技巧
+---
+
+在部署好SSR后，发现terminal中git clone的速度仍然非常慢。一下几步便可解决问题：
+1. 查看http代理：右键点击右上角的ShadowsocksR图标->配置->选项设置，可以看到http代理端口号
+2. 进入Terminal，输入：
+'''
+    export HTTP_PROXY=http://127.0.0.1:端口号
+    export HTTPS_PROXY=http://127.0.0.1:端口号
+'''
+3. 也可以直接将以上两行代码写进zshrc
